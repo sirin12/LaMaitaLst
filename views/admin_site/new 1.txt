@@ -1,0 +1,28 @@
+<?php require_once __DIR__ . '/vendor/autoload.php';
+
+$mpdf = new \Mpdf\Mpdf();
+ob_start();
+
+$html='aaa';
+$html = ob_get_contents();
+ob_end_clean();
+
+$mpdf->WriteHTML($html);
+
+$mpdf->Output('BC N°.pdf', 'I');
+exit;
+?>
+
+<?php require_once('vendor/autoload.php');
+
+$mpdf = new \Mpdf\Mpdf([
+
+        'default_font' => 'FreeSerif',
+        'mode' => 'utf-8',
+        'margin_top'=>35,
+        'margin_buttom'=>5,
+		'margin_left'=>10,
+        'margin_right'=>15,
+    ]);
+ob_start();
+?>
